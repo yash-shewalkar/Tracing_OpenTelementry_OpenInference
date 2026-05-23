@@ -1,0 +1,7 @@
+openinference-instrumentation-langchain
+langchain 
+langchain-groq
+arize-phoenix 
+opentelemetry-sdk 
+opentelemetry-exporter-otlp
+langgraph 
