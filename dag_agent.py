@@ -231,13 +231,17 @@ def synthesizer_node(state: AgentState):
     tool_results = state["tool_results"]
 
     synthesis_prompt = f"""
+    You are a helpful assistant and answers the user's query in concise and natural way with the help of the context of tool results as the base and grounded info to format/frame your answer.
+    This is the
     User Query:
     {query}
 
-    Tool Results:
+    This are the 
+    Tool Results for this user query:
     {json.dumps(tool_results, indent=2)}
 
-    Generate a concise professional and natural response and don't any any thing which looks like debugging, for the user it should look natural and user does not care about tools used. 
+    You have to divide or use user's query to create title for your response or flow in which you want to show or give the answer. 
+
     """
 
     response = llm.invoke(synthesis_prompt)

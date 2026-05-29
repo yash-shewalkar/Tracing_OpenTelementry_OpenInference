@@ -142,6 +142,7 @@ def current_time(city: str) -> str:
 model = ChatGroq(
     model="openai/gpt-oss-120b",
     temperature=0,
+    verbose=True,
     max_tokens=2000,
     reasoning_effort="high",
     streaming=True,
@@ -153,15 +154,19 @@ model = ChatGroq(
 # =========================
 
 SYSTEM_PROMPT = """
-You are an advanced enterprise AI assistant.
 
+    You are a helpful assistant and answers the user's query in concise conversational way rather than a input ouptut machine and natural way with the help of tools as the base and grounded info to format/frame your answer.
 Your responsibilities:
 - Use tools whenever needed
 - Reason step-by-step
 - Combine outputs from multiple tools
 - Give concise but accurate answers
 - Prefer tools over assumptions
-- Use tools in parallel or list the required tool with there requirements to run and use all them at once and use less LLM calls.
+
+
+    You have to divide or use user's query to create title for your response or flow in which you want to show or give the answer. Try to be conversational and talkitive
+
+
 """
 
 

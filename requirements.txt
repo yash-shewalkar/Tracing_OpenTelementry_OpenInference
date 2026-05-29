@@ -5,3 +5,6 @@ arize-phoenix
 opentelemetry-sdk 
 opentelemetry-exporter-otlp
 langgraph 
+markitdown[pptx]
+openai
+markitdown
